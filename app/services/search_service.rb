@@ -9,6 +9,6 @@ class SearchService
   end
 
   def self.all_characters(nation)
-    @all_characters ||= get_url("characters?perPage=200&affiliation=#{nation}")
+    get_url("characters?perPage=200&affiliation=#{nation}")
   end
 end

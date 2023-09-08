@@ -12,7 +12,7 @@ class SearchController < ApplicationController
       "fire+nation" => "Fire Nation",
       "air+nomads" => "Air Nomads",
       "earth+kingdom" => "Earth Kingdom",
-      "water+tribe" => "Water Tribe"
+      "water+tribes" => "Water Tribes"
     }
     
     nations[nation_params] || nation_params
