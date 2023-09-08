@@ -9,7 +9,7 @@ class SearchFacade < ApplicationController
     get_all_characters(nation).take(25)
   end
 
-  def self.char_count
-    get_all_characters.length
+  def self.char_count(nation)
+    get_all_characters(nation).length
   end
 end

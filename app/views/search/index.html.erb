@@ -1,7 +1,40 @@
 <h1><%= @nation %></h1>
 <h3>Nation Member Count: <%= @character_count %><h3>
 
-<% @characters.each do |char| %>
+<% @characters.each do |character| %>
+  <div class="member">
+    <% if character.photo_url.present? %>
+      <img src="<%= character.photo_url %>" alt="<%= character.name %> Photo">
+    <% end %>
+    <h2><%= character.name %></h2>
 
+    <h3>Allies:</h3>
+    <% if character.allies.any? %>
+      <ul>
+        <% character.allies.each do |ally| %>
+          <li><%= ally %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>None</p>
+    <% end %>
 
+    <h3>Enemies:</h3>
+    <% if character.enemies.any? %>
+      <ul>
+        <% character.enemies.each do |enemy| %>
+          <li><%= enemy %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>None</p>
+    <% end %>
+
+    <h3>Affiliations:</h3>
+    <% if character.affiliation.present? %>
+      <p><%= character.affiliation %></p>
+    <% else %>
+      <p>None</p>
+    <% end %>
+  </div>
 <% end %>

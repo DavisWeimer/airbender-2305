@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   def index
     @nation = nation_decoder(params[:nation])
     @characters = SearchFacade.get_25_characters(params[:nation])
-    @character_count = SearchFacade.char_count
+    @character_count = SearchFacade.char_count(params[:nation])
   end
 
   private
