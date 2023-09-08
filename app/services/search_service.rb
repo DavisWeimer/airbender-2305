@@ -1,5 +1,5 @@
 class SearchService
-  def self.have_content
+  def self.conn
     Faraday.new(url: "https://last-airbender-api.fly.dev/api/v1/" )
   end
 
@@ -8,7 +8,7 @@ class SearchService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_all_characters
+  def self.all_characters
     get_url("characters")
   end
 end
