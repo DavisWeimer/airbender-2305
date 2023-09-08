@@ -1,6 +1,6 @@
 class SearchService
   def self.conn
-    Faraday.new(url: "https://last-airbender-api.fly.dev/api/v1/" )
+    @conn ||= Faraday.new(url: "https://last-airbender-api.fly.dev/api/v1/")
   end
 
   def self.get_url(url)
@@ -9,6 +9,6 @@ class SearchService
   end
 
   def self.all_characters
-    get_url("characters")
+    @all_characters ||= get_url("characters")
   end
 end

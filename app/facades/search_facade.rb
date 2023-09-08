@@ -4,4 +4,8 @@ class SearchFacade < ApplicationController
       Character.new(char_data)
     end
   end
+
+  def self.char_count
+    get_all_characters.length
+  end
 end

@@ -7,7 +7,7 @@ RSpec.describe "Avatar API", type: :feature do
 
       expect(page).to have_content("The Four Nations")
 
-      select "Air Nomads", from: "nation"
+      select "Fire Nation", from: "nation"
       click_button "Search For Members"
 
       expect(current_path).to eq(search_path)

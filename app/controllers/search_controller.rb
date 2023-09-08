@@ -1,11 +1,13 @@
 class SearchController < ApplicationController
   def index
-    require 'pry'; binding.pry
     @nation = nation_decoder(params[:nation])
     @characters = SearchFacade.get_all_characters
+    require 'pry'; binding.pry
+    @character_count = SearchFacade.char_count
   end
 
   private
+
   def nation_decoder(nation_params)
     nations = {
       "fire+nation" => "Fire Nation",
@@ -17,8 +19,3 @@ class SearchController < ApplicationController
     nations[nation_params] || nation_params
   end
 end
-
-# "fire+nation"
-# "air+nomads"
-# "earth+kingdoms"
-# "water+tribes"
