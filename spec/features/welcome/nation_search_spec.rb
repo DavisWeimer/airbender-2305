@@ -12,6 +12,7 @@ RSpec.describe "Avatar API", type: :feature do
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content("Fire Nation")
+      save_and_open_page
     end
   end
 end

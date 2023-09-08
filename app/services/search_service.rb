@@ -8,7 +8,7 @@ class SearchService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.all_characters
-    @all_characters ||= get_url("characters")
+  def self.all_characters(nation)
+    @all_characters ||= get_url("characters?perPage=200&affiliation=#{nation}")
   end
 end
